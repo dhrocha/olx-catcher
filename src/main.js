@@ -15,7 +15,6 @@ app.get('/', (req, res) => {
 app.get('/getOlxData', async (req, res) => {
   const { query, hoursPersistance } = req.body
   const dateTime = new Date()
-
   const dataSaved = await loadData(query)
 
   setTimeout(async () => {
@@ -23,6 +22,7 @@ app.get('/getOlxData', async (req, res) => {
     if (dataSaved) {
       const databaseDate = new Date(Number(dataSaved.datetime))
       databaseDate.setHours(databaseDate.getHours() + hoursPersistance)
+
       if (dataSaved.length == 0) {
         result = await returnData(query)
         await saveData(query, result)
