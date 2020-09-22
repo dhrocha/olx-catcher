@@ -25,10 +25,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: Docker login
         env: 
-          DOCKER_USER: ${{secrets.DOCKER_USER}}
-          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: | 
-          docker login -u DOCKER_USER -p DOCKER_PASSWORD 
+          docker login -u DOCKER_USER --password-stdin DOCKER_PASSWORD 
 
       # Runs a set of commands using the runners shell
       - name: Build image
@@ -36,4 +36,4 @@ jobs:
           docker build . --file Dockerfile --tag dhrocha/carbel-group-test:$(date +%s)
           
       - name: Docker push
-        run: docker push ${{secrets.DOCKER_USER}}/carbel-group-test
+        run: docker push ${{ secrets.DOCKER_USER }}/carbel-group-test
