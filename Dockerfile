@@ -4,4 +4,4 @@ COPY package.json /app
 RUN yarn 
 COPY . /app
 CMD node src/main.js
-EXPOSE 8080
+EXPOSE 3000

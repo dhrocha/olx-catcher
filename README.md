@@ -31,3 +31,9 @@ Make a GET requisition to /getOlxData with JSON body like this
 - hoursPersistance: the number of hours to get cached data. If this number is 0, no cached data will be returned
 
 In the first query string searched, by default, data results will be saved in database.
+
+## Docker
+
+Docker image of this app is available in Docker Hub. Run with:
+`docker pull dhrocha/carbel-group-test:latest`
+`docker run -p 3000:3000 --detach --name carbel dhrocha/carbel-group-test`
