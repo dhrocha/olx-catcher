@@ -1,4 +1,4 @@
-# Carbel-Group Backend Test
+# olx-catcher Backend Test
 
 ### Author: Daniel Rocha - rochadhc@gmail.com
 
@@ -11,7 +11,7 @@
 
 ## Installation
 
-`git clone https://github.com/dhrocha/carbel-group.git`
+`git clone https://github.com/dhrocha/olx-catcher.git`
 
 `yarn`
 
